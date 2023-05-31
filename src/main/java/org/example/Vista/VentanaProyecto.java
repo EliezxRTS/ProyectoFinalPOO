@@ -25,10 +25,12 @@ public class VentanaProyecto extends JFrame {
     private JScrollPane scrollPane;
     private JPanel panel03; //Imagen del registro
     private JLabel lblPrincipal03;
+    private JLabel lblImagenNadador;
     private JPanel panel04; //Update & Delete
     private JLabel lblPrincipal04;
     private JLabel lblUpdate;
-    private JTextField txtUpdate;
+    private JTextField txtUpdate01;
+    private JTextField txtUpdate02;
     private JButton btnUpdate;
     private JLabel lblDelete;
     private JTextField txtDelete;
@@ -184,6 +186,24 @@ public class VentanaProyecto extends JFrame {
         constraints = new GridBagConstraints();
         panel03.setBackground(new Color(122, 185, 175));
 
+            lblPrincipal03 = new JLabel("Foto del nadador seleccionado");
+            constraints.fill = GridBagConstraints.HORIZONTAL;
+            constraints.weightx = 1;
+            constraints.gridwidth = 1;
+            constraints.gridx = 0;
+            constraints.gridy = 0;
+            constraints.insets = new Insets(10,30,10,30);
+            panel03.add(lblPrincipal03,constraints);
+
+            //ImagenNadador
+            lblImagenNadador = new JLabel("...");
+            constraints.fill = GridBagConstraints.HORIZONTAL;
+            constraints.weightx = 1;
+            constraints.gridwidth = 1;
+            constraints.gridx = 0;
+            constraints.gridy = 1;
+            constraints.insets = new Insets(10,30,10,30);
+            panel03.add(lblImagenNadador,constraints);
 
         //Panel04
         panel04 = new JPanel(new GridBagLayout());
@@ -230,13 +250,13 @@ public class VentanaProyecto extends JFrame {
             constraints.gridy = 2;
             constraints.insets = new Insets(10,10,10,10);
             panel04.add(lblUpdate,constraints);
-            txtUpdate = new JTextField(5);
+            txtUpdate01 = new JTextField(5);
             constraints.fill = GridBagConstraints.HORIZONTAL;
             constraints.weightx = 0.2;
             constraints.gridx = 1;
             constraints.gridy = 2;
             constraints.insets = new Insets(10,10,10,10);
-            panel04.add(txtUpdate,constraints);
+            panel04.add(txtUpdate01,constraints);
             lblUpdate = new JLabel("En el campo:");
             constraints.fill = GridBagConstraints.HORIZONTAL;
             constraints.weightx = 0.2;
@@ -244,7 +264,7 @@ public class VentanaProyecto extends JFrame {
             constraints.gridy = 2;
             constraints.insets = new Insets(10,10,10,10);
             panel04.add(lblUpdate,constraints);
-            String[] elementos = {"Nombre","Edad","Nacionalidad","Especialidad","FotoURL"};
+            String[] elementos = {"","Nombre","Edad","Nacionalidad","Especialidad","FotoURL"};
             cmbUpdate = new JComboBox<>(elementos);
             constraints.fill = GridBagConstraints.HORIZONTAL;
             constraints.weightx = 0.2;
@@ -259,13 +279,13 @@ public class VentanaProyecto extends JFrame {
             constraints.gridy = 3;
             constraints.insets = new Insets(10,10,10,10);
             panel04.add(lblUpdate,constraints);
-            txtUpdate = new JTextField(15);
+            txtUpdate02 = new JTextField(15);
             constraints.fill = GridBagConstraints.HORIZONTAL;
             constraints.weightx = 0.2;
             constraints.gridx = 1;
             constraints.gridy = 3;
             constraints.insets = new Insets(10,10,10,10);
-            panel04.add(txtUpdate,constraints);
+            panel04.add(txtUpdate02,constraints);
             btnUpdate = new JButton("Actualizar");
             constraints.fill = GridBagConstraints.HORIZONTAL;
             constraints.weightx = 0.2;
@@ -475,12 +495,20 @@ public class VentanaProyecto extends JFrame {
         this.lblUpdate = lblUpdate;
     }
 
-    public JTextField getTxtUpdate() {
-        return txtUpdate;
+    public JTextField getTxtUpdate01() {
+        return txtUpdate01;
     }
 
-    public void setTxtUpdate(JTextField txtUpdate) {
-        this.txtUpdate = txtUpdate;
+    public void setTxtUpdate01(JTextField txtUpdate01) {
+        this.txtUpdate01 = txtUpdate01;
+    }
+
+    public JTextField getTxtUpdate02() {
+        return txtUpdate02;
+    }
+
+    public void setTxtUpdate02(JTextField txtUpdate02) {
+        this.txtUpdate02 = txtUpdate02;
     }
 
     public JButton getBtnUpdate() {
@@ -523,11 +551,22 @@ public class VentanaProyecto extends JFrame {
         this.btnDelete = btnDelete;
     }
 
+    public JLabel getLblImagenNadador() {
+        return lblImagenNadador;
+    }
+
+    public void setLblImagenNadador(JLabel lblImagenNadador) {
+        this.lblImagenNadador = lblImagenNadador;
+    }
+
     public void limpiar(){
         txtNombre.setText("");
         txtEdad.setText("");
         txtNacionalidad.setText("");
         txtEspecialidad.setText("");
         txtFotoURL.setText("");
+        txtDelete.setText("");
+        txtUpdate01.setText("");
+        txtUpdate02.setText("");
     }
 }

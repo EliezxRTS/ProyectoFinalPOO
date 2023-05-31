@@ -7,6 +7,7 @@ import org.example.Vista.VentanaProyecto;
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.net.MalformedURLException;
 
 public class ControladorNadador extends MouseAdapter {
     private VentanaProyecto ventanaProyecto;
@@ -52,13 +53,25 @@ public class ControladorNadador extends MouseAdapter {
                 this.ventanaProyecto.getTblNadador().updateUI();
             }
         }
-        if (e.getSource() == this.ventanaProyecto.getCmbUpdate()){
-            int campoSeleccionado = this.ventanaProyecto.getCmbUpdate().getSelectedIndex();
-        }
         if (e.getSource() == this.ventanaProyecto.getBtnUpdate()){
-            String id = this.ventanaProyecto.getTxtUpdate().getText();
-            modeloTablaNadador.actualizarNadador(new Nadador());
+            String id = this.ventanaProyecto.getTxtUpdate01().getText();
+            int campo = this.ventanaProyecto.getCmbUpdate().getSelectedIndex();
+            String texto = this.ventanaProyecto.getTxtUpdate02().getText();
+            modeloTablaNadador.actualizarNadador(id,campo,texto);
+            this.ventanaProyecto.getTblNadador().updateUI();
         }
+        if (e.getSource() == this.ventanaProyecto.getTblNadador()){
+            System.out.println("evento en tabla");
+            int index = this.ventanaProyecto.getTblNadador().getSelectedRow();
+            Nadador tmp = modeloTablaNadador.getNadadorAtIndex(index);
+            try{
+                this.ventanaProyecto.getLblImagenNadador().setIcon(tmp.getImagen());
+                this.ventanaProyecto.getLblImagenNadador().setText("");
+            } catch (MalformedURLException malformedURLException){
+                malformedURLException.getStackTrace();
+            }
+        }
+        this.ventanaProyecto.getTblNadador().updateUI();
         this.ventanaProyecto.limpiar();
         this.ventanaProyecto.pack();
     }

@@ -19,6 +19,7 @@ public class ModeloTablaNadador implements TableModel {
 
     public ModeloTablaNadador(ArrayList<Nadador> datos) {
         this.datos = datos;
+        datos = new ArrayList<>();
     }
 
     @Override
@@ -125,10 +126,10 @@ public class ModeloTablaNadador implements TableModel {
             System.out.println(sqlException.getMessage());
         }
     }
-    public boolean actualizarNadador(Nadador nadador){
+    public boolean actualizarNadador(String id,int campo,String texto){
         boolean resultado = false;
         try {
-            if (nadadorDAO.update(nadador, null)){
+            if (nadadorDAO.update(id,campo,texto)){
                 resultado = true;
             }
         } catch (SQLException sqlException){
@@ -163,5 +164,8 @@ public class ModeloTablaNadador implements TableModel {
             System.out.println(sqlException.getMessage());
         }
         return resultado;
+    }
+    public Nadador getNadadorAtIndex(int idx){
+        return datos.get(idx);
     }
 }

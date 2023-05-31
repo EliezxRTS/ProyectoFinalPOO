@@ -1,5 +1,9 @@
 package org.example.Modelo;
 
+import javax.swing.*;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class Nadador {
     private int id;
     private String nombre;
@@ -78,5 +82,9 @@ public class Nadador {
                 ", especialidad='" + especialidad + '\'' +
                 ", fotoURL='" + fotoURL + '\'' +
                 '}';
+    }
+    public ImageIcon getImagen() throws MalformedURLException{
+        URL urlImagen = new URL(this.fotoURL);
+        return new ImageIcon(urlImagen);
     }
 }

@@ -27,44 +27,43 @@ public class NadadorDAO implements NadadorDAOInterface{
     }
 
     @Override
-    public boolean update(Object obj,String id) throws SQLException {
+    public boolean update(String id,int campo,String texto) throws SQLException {
         String sqlUpdate;
         int rowCount = 0;
-        int campoSeleccionado = rowCount;
-        switch (campoSeleccionado){
+        switch (campo){
             case 1:
                 sqlUpdate = "UPDATE Nadadores SET Nombre = ? WHERE Id = ? ;";
                 PreparedStatement preparedStatement = DBConnection.getInstance("Nadadores.db").getConnection().prepareStatement(sqlUpdate);
-                preparedStatement.setString(2,((Nadador)obj).getNombre());
-                preparedStatement.setInt(3, Integer.parseInt(id));
+                preparedStatement.setString(1,(texto));
+                preparedStatement.setInt(2, Integer.parseInt(id));
                 rowCount = preparedStatement.executeUpdate();
                 break;
             case 2:
                 sqlUpdate = "UPDATE Nadadores SET Edad = ? WHERE Id = ? ;";
                 preparedStatement = DBConnection.getInstance("Nadadores.db").getConnection().prepareStatement(sqlUpdate);
-                preparedStatement.setInt(2,((Nadador)obj).getEdad());
-                preparedStatement.setInt(3, Integer.parseInt(id));
+                preparedStatement.setInt(1,(Integer.parseInt(texto)));
+                preparedStatement.setInt(2, Integer.parseInt(id));
                 rowCount = preparedStatement.executeUpdate();
                 break;
             case 3:
                 sqlUpdate = "UPDATE Nadadores SET Nacionalidad = ? WHERE Id = ? ;";
                 preparedStatement = DBConnection.getInstance("Nadadores.db").getConnection().prepareStatement(sqlUpdate);
-                preparedStatement.setString(2,((Nadador)obj).getNacionalidad());
-                preparedStatement.setInt(3, Integer.parseInt(id));
+                preparedStatement.setString(1,(texto));
+                preparedStatement.setInt(2, Integer.parseInt(id));
                 rowCount = preparedStatement.executeUpdate();
                 break;
             case 4:
                 sqlUpdate = "UPDATE Nadadores SET Especialidad = ? WHERE Id = ? ;";
                 preparedStatement = DBConnection.getInstance("Nadadores.db").getConnection().prepareStatement(sqlUpdate);
-                preparedStatement.setString(2,((Nadador)obj).getEspecialidad());
-                preparedStatement.setInt(3, Integer.parseInt(id));
+                preparedStatement.setString(1,(texto));
+                preparedStatement.setInt(2, Integer.parseInt(id));
                 rowCount = preparedStatement.executeUpdate();
                 break;
             case 5:
                 sqlUpdate = "UPDATE Nadadores SET FotoURL = ? WHERE Id = ? ;";
                 preparedStatement = DBConnection.getInstance("Nadadores.db").getConnection().prepareStatement(sqlUpdate);
-                preparedStatement.setString(2,((Nadador)obj).getFotoURL());
-                preparedStatement.setInt(3, Integer.parseInt(id));
+                preparedStatement.setString(1,(texto));
+                preparedStatement.setInt(2, Integer.parseInt(id));
                 rowCount = preparedStatement.executeUpdate();
                 break;
         }
