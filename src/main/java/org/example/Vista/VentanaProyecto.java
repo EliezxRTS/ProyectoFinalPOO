@@ -148,7 +148,7 @@ public class VentanaProyecto extends JFrame {
             panel01.add(btnAgregar,constraints);
 
         //Panel02
-        panel02 = new JPanel(new GridBagLayout());
+        /*panel02 = new JPanel(new GridBagLayout());
         constraints = new GridBagConstraints();
         panel02.setBackground(new Color(206, 154, 118));
 
@@ -178,8 +178,28 @@ public class VentanaProyecto extends JFrame {
             constraints.gridx = 0;
             constraints.gridy = 2;
             constraints.insets = new Insets(0,30,0,30);
-            panel02.add(btnCargarDatos,constraints);
+            panel02.add(btnCargarDatos,constraints);*/
 
+        panel02 = new JPanel();
+        panel02.setLayout(new BoxLayout(panel02, BoxLayout.Y_AXIS));
+        panel02.setBackground(new Color(206, 154, 118));
+
+            //Cambio de GridBagLayout a BoxLayout
+            lblPrincipal02 = new JLabel("Tabla con los registros de la DB actual");
+            lblPrincipal02.setAlignmentX(Component.CENTER_ALIGNMENT);
+            panel02.add(Box.createVerticalGlue());
+            panel02.add(lblPrincipal02);
+
+            tblNadador = new JTable();
+            scrollPane = new JScrollPane(tblNadador);
+            tblNadador.setPreferredScrollableViewportSize(new Dimension(200, 300));
+            scrollPane.setAlignmentX(Component.CENTER_ALIGNMENT);
+            panel02.add(scrollPane);
+
+            btnCargarDatos = new JButton("Cargar datos desde el registro");
+            btnCargarDatos.setAlignmentX(Component.CENTER_ALIGNMENT);
+            panel02.add(btnCargarDatos);
+            panel02.add(Box.createVerticalGlue());
 
         //Panel03
         panel03 = new JPanel(new GridBagLayout());
