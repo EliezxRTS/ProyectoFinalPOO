@@ -1,0 +1,27 @@
+Nadador#01
+Nombre:Jennifer Thompson
+Edad:50
+Nacionalidad:Estadounidense
+Especialidad:Croll
+FotoURL:https://image.jimcdn.com/app/cms/image/transf/dimension=666x10000:format=jpg/path/s0b1136b628317e1a/image/i426e68fbc471734c/version/1661221404/image.jpg
+
+Nadador#02
+Nombre:Aleksandr Vladímirovich Popóv
+Edad:51
+Nacionalidad:Ruso
+Especialidad:Croll
+FotoURL:https://www.biografiasyvidas.com/biografia/p/fotos/popov.jpg
+
+Nadador#03
+Nombre:Arantxa Elizabeth Chávez Muñoz
+Edad:32
+Nacionalidad:Mexicana
+Especialidad:Trampolín
+FotoURL:https://www.gob.mx/cms/uploads/article/main_image/118667/FotoJet_-_2022-03-16T144115.853.jpg
+
+Nadador#04
+Nombre:Dolores Hernández Monzón
+Edad:26
+Nacionalidad:Mexicana
+Especialidad:Trampolín
+FotoURL:https://cdn.milenio.com/uploads/media/2021/07/25/dolores-hernandez-instagram_1_0_810_504.jpg

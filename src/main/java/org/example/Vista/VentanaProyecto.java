@@ -158,7 +158,7 @@ public class VentanaProyecto extends JFrame {
             constraints.anchor = GridBagConstraints.CENTER;
             constraints.gridx = 0;
             constraints.gridy = 0;
-            constraints.insets = new Insets(10,30,10,30);
+            constraints.insets = new Insets(0,30,0,30);
             panel02.add(lblPrincipal02,constraints);
 
             //Tabla
@@ -168,7 +168,7 @@ public class VentanaProyecto extends JFrame {
             constraints.weightx = 0.5;
             constraints.gridx = 0;
             constraints.gridy = 1;
-            constraints.insets = new Insets(10,30,10,30);
+            constraints.insets = new Insets(0,30,0,30);
             panel02.add(scrollPane,constraints);
 
             //Boton LeerDB
@@ -177,7 +177,7 @@ public class VentanaProyecto extends JFrame {
             constraints.weightx = 0.5;
             constraints.gridx = 0;
             constraints.gridy = 2;
-            constraints.insets = new Insets(10,30,10,30);
+            constraints.insets = new Insets(0,30,0,30);
             panel02.add(btnCargarDatos,constraints);
 
 
@@ -188,20 +188,22 @@ public class VentanaProyecto extends JFrame {
 
             lblPrincipal03 = new JLabel("Foto del nadador seleccionado");
             constraints.fill = GridBagConstraints.HORIZONTAL;
-            constraints.weightx = 1;
+            constraints.weightx = 0.0;
             constraints.gridwidth = 1;
             constraints.gridx = 0;
             constraints.gridy = 0;
+            constraints.anchor = GridBagConstraints.CENTER;
             constraints.insets = new Insets(10,30,10,30);
             panel03.add(lblPrincipal03,constraints);
 
             //ImagenNadador
             lblImagenNadador = new JLabel("...");
-            constraints.fill = GridBagConstraints.HORIZONTAL;
-            constraints.weightx = 1;
+            constraints.fill = GridBagConstraints.BOTH;
+            constraints.weightx = 0.0;
             constraints.gridwidth = 1;
             constraints.gridx = 0;
             constraints.gridy = 1;
+            constraints.anchor = GridBagConstraints.CENTER;
             constraints.insets = new Insets(10,30,10,30);
             panel03.add(lblImagenNadador,constraints);
 
@@ -568,5 +570,6 @@ public class VentanaProyecto extends JFrame {
         txtDelete.setText("");
         txtUpdate01.setText("");
         txtUpdate02.setText("");
+        cmbUpdate.setSelectedIndex(0);
     }
 }
