@@ -54,6 +54,7 @@ public class ControladorNadador extends MouseAdapter {
                 }
                 if (modeloTablaNadador.agregarNadador(nadador)) {
                     JOptionPane.showMessageDialog(ventanaProyecto, "Se agrego correctamente", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                    modeloTablaNadador.cargarDatos();
                     this.ventanaProyecto.getTblNadador().updateUI();
                 } else {
                     JOptionPane.showMessageDialog(ventanaProyecto, "No se pudo agregar a la base de datos", "Aviso", JOptionPane.ERROR_MESSAGE);
@@ -69,6 +70,7 @@ public class ControladorNadador extends MouseAdapter {
                 int resultado = JOptionPane.showConfirmDialog(ventanaProyecto, "Borrar registro?", "Confirmacion", JOptionPane.YES_NO_OPTION);
                 if (resultado == JOptionPane.YES_NO_OPTION) {
                     modeloTablaNadador.borrarNadador(id);
+                    modeloTablaNadador.cargarDatos();
                     this.ventanaProyecto.getTblNadador().updateUI();
                 }
                 this.ventanaProyecto.limpiar();
@@ -86,6 +88,7 @@ public class ControladorNadador extends MouseAdapter {
                 int resultado = JOptionPane.showConfirmDialog(ventanaProyecto,"Actualizar registro?","Confirmación",JOptionPane.YES_NO_OPTION);
                 if (resultado == JOptionPane.YES_NO_OPTION) {
                     modeloTablaNadador.actualizarNadador(id, campo, texto);
+                    modeloTablaNadador.cargarDatos();
                     this.ventanaProyecto.getTblNadador().updateUI();
                 }
                 this.ventanaProyecto.limpiar();
